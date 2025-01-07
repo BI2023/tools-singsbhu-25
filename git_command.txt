@@ -4,4 +4,5 @@ git add README.md
 git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/BI2023/big_file_data.git
-git push -u origin main
+git push -u origin main  :  For the first time , we should exceute like this to push the code to make a connection between the your system's git and he repo.
+                            So that next onward we can push the code by simply :  git push 
