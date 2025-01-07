@@ -1,0 +1,4 @@
+fr
+it
+zh_TW
+br

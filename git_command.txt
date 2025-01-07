@@ -1,0 +1,7 @@
+echo "# big_file_data" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/BI2023/big_file_data.git
+git push -u origin main

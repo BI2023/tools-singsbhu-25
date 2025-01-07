@@ -1,0 +1,4 @@
+<option value="fr">fr</option>
+<option value="it">it</option>
+<option value="zh_TW">zh_TW</option>
+<option value="br">br</option>

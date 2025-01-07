@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Searchable Dropdown</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .dropdown-container {
+            position: relative;
+            width: 300px;
+        }
+        .dropdown-selected {
+            padding: 10px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            background-color: white;
+        }
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 1000;
+        }
+        .dropdown-menu input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid #ccc;
+        }
+        .dropdown-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+        .dropdown-menu li {
+            padding: 8px;
+            cursor: pointer;
+        }
+        .dropdown-menu li:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="dropdown-container">
+        <div class="dropdown-selected" onclick="toggleDropdown()">Select an option</div>
+        <div class="dropdown-menu">
+            <input type="text" id="dropdownSearch" placeholder="Search..." onkeyup="filterDropdown()">
+            <ul id="dropdownOptions">
+                <li onclick="selectOption(this)">Option 1</li>
+                <li onclick="selectOption(this)">Option 2</li>
+                <li onclick="selectOption(this)">Option 3</li>
+                <li onclick="selectOption(this)">Option 4</li>
+                <li onclick="selectOption(this)">Option 5</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const dropdownContainer = document.querySelector('.dropdown-container');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+        const dropdownSelected = document.querySelector('.dropdown-selected');
+        const dropdownOptions = document.getElementById('dropdownOptions');
+
+        function toggleDropdown() {
+            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function filterDropdown() {
+            const searchValue = document.getElementById('dropdownSearch').value.toLowerCase();
+            const options = dropdownOptions.querySelectorAll('li');
+            options.forEach(option => {
+                const text = option.textContent.toLowerCase();
+                option.style.display = text.includes(searchValue) ? '' : 'none';
+            });
+        }
+
+        function selectOption(option) {
+            dropdownSelected.textContent = option.textContent;
+            dropdownMenu.style.display = 'none';
+        }
+
+        document.addEventListener('click', (e) => {
+            if (!dropdownContainer.contains(e.target)) {
+                dropdownMenu.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
