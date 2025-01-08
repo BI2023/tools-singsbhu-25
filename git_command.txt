@@ -6,3 +6,11 @@ git branch -M main
 git remote add origin https://github.com/BI2023/big_file_data.git
 git push -u origin main  :  For the first time , we should exceute like this to push the code to make a connection between the your system's git and he repo.
                             So that next onward we can push the code by simply :  git push 
+                            So that from next onward , git can understand to which repo need to connect.
+
+
+
+
+origin :  jab hum repository ko add krte hai, using this command "git remote add origin https://github.com/BI2023/big_file_data.git", toh git repository ke link ko
+          origin me assign kr deta hai. In simple word we can say orgin is the varibale in which the repository link is stored
+            
