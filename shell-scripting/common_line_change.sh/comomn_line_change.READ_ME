@@ -1,0 +1,22 @@
+
+
+systex for while loop in shell-script :
+
+
+while IFS= read -r variable1 variable2 variable3 ...; do
+
+        # Intructions for task
+
+        echo $variable1 $variable2 ....
+
+
+done < input_file
+
+
+IFS :  Internal field sperator : IFS ,  "read" command को  instruct करता है की  file में field separator क्या  है  ताकि  "read" command हरेएक line के word को  एक 
+                                 particular variable me assign कर सके .
+
+                                 Be default field separator for IFS is :  tab, space and new-line
+
+
+read -r :   Reads the line into the varibales 

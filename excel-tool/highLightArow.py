@@ -40,7 +40,7 @@ for idx, row in search_df.iterrows():
         target_column1 = "ColumnToSearch1"  # Update with correct column name
         target_column2 = "ColumnToSearch2"  # Update with correct column name
 
-        # Check if both columns exist
+        
         if target_column1 in df.columns and target_column2 in df.columns:
             # Check if the combination exists in the target sheet
             matched_rows = df[(df[target_column1] == value1) & (df[target_column2] == value2)]
